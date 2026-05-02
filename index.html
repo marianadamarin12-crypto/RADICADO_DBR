@@ -59,6 +59,40 @@ td:first-child{text-align:center;font-size:11px;color:var(--text3);font-family:v
   .hero { background:#1A2E6C !important; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
 }
 </style>
+
+<style>
+/* ── Mobile fixes ── */
+@media (max-width: 600px) {
+  /* Logo smaller and repositioned on mobile */
+  .hero img[alt="Logo Acueducto de Bogotá"] {
+    height: 24px !important;
+    top: 0.6rem !important;
+    right: 0.75rem !important;
+  }
+  /* Hero icon smaller so it doesn't overlap logo */
+  .hero > div[style*="width:64px"] {
+    margin-top: 1.5rem !important;
+  }
+  /* KPI grid wraps nicely */
+  .hero-kpis {
+    max-width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 2px !important;
+  }
+  .kpi {
+    min-width: 70px !important;
+    flex: 1 1 70px !important;
+  }
+}
+/* Remove link styles from radicado cells */
+.rad a, td.rad a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.rad {
+  color: #4B5563 !important;
+}
+</style>
 </head>
 <body>
 <nav class="topbar">
@@ -206,7 +240,41 @@ function exportToExcel() {
     var fecha = new Date().toLocaleDateString("es-CO",{year:"numeric",month:"long",day:"numeric"});
 
     var html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns="http://www.w3.org/TR/REC-html40">';
-    html += '<head><meta charset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Radicados</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head><body>';
+    html += '<head><meta charset="UTF-8"><!--[if gte mso 9]><xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>Radicados</x:Name><x:WorksheetOptions><x:DisplayGridlines/></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]-->
+<style>
+/* ── Mobile fixes ── */
+@media (max-width: 600px) {
+  /* Logo smaller and repositioned on mobile */
+  .hero img[alt="Logo Acueducto de Bogotá"] {
+    height: 24px !important;
+    top: 0.6rem !important;
+    right: 0.75rem !important;
+  }
+  /* Hero icon smaller so it doesn't overlap logo */
+  .hero > div[style*="width:64px"] {
+    margin-top: 1.5rem !important;
+  }
+  /* KPI grid wraps nicely */
+  .hero-kpis {
+    max-width: 100% !important;
+    flex-wrap: wrap !important;
+    gap: 2px !important;
+  }
+  .kpi {
+    min-width: 70px !important;
+    flex: 1 1 70px !important;
+  }
+}
+/* Remove link styles from radicado cells */
+.rad a, td.rad a {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+.rad {
+  color: #4B5563 !important;
+}
+</style>
+</head><body>';
 
     // Header
     html += '<table style="width:100%;border-collapse:collapse;margin-bottom:8px;">';
