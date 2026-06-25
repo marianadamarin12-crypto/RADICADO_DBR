@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dirección Bienes Raíces — GCSM 2024–2026</title>
+<style>
+:root{--bg:#F7F8FC;--surface:#FFFFFF;--border:#E4E7EF;--navy:#1A2E6C;--navy-mid:#2547A8;--blue-lt:#EBF0FF;--text:#111827;--text2:#4B5563;--text3:#9CA3AF;--radius:10px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.6}
+.topbar{position:sticky;top:0;z-index:100;background:var(--navy);padding:0 2rem;display:flex;align-items:center;gap:1rem;height:52px;box-shadow:0 2px 12px rgba(26,46,108,.25)}
+.topbar-title{font-size:13px;font-weight:600;color:#fff;letter-spacing:.02em;white-space:nowrap}
+.topbar-sep{width:1px;height:20px;background:rgba(255,255,255,.2);flex-shrink:0}
+.topbar-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+.topbar-links::-webkit-scrollbar{display:none}
+.topbar-link{display:inline-flex;align-items:center;gap:6px;padding:5px 11px;border-radius:6px;font-size:12px;font-weight:500;color:rgba(255,255,255,.75);text-decoration:none;white-space:nowrap;transition:background .15s,color .15s}
+.topbar-link:hover,.topbar-link.active{background:rgba(255,255,255,.15);color:#fff}
+.topbar-link .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.hero{padding:3rem 2rem 2.5rem;text-align:center;position:relative}
+.hero-eyebrow{display:inline-block;margin-bottom:.6rem;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.85);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 14px;border-radius:20px}
+.hero h1{font-size:clamp(1.5rem,4vw,2.2rem);font-weight:600;color:#fff;margin-bottom:.4rem;line-height:1.2}
+.hero-sub{font-size:13px;color:rgba(255,255,255,.65);margin-bottom:1.8rem}
+.hero-kpis{display:flex;justify-content:center;gap:1px;max-width:460px;margin:0 auto;background:rgba(255,255,255,.1);border-radius:var(--radius);overflow:hidden}
+.kpi{flex:1;padding:.9rem .75rem;background:rgba(255,255,255,.06);text-align:center}
+.kpi-val{font-size:1.6rem;font-weight:600;color:#fff;line-height:1}
+.kpi-lbl{font-size:10px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
+.content{max-width:900px;margin:0 auto;padding:2rem 1.5rem}
+.vig-label{display:inline-flex;align-items:center;gap:6px;margin:1.25rem 0 .6rem;font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:5px 12px;border-radius:6px}
+.table-wrap{width:100%;overflow-x:auto;border-radius:var(--radius);border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:13px;min-width:520px}
+thead tr{background:var(--navy)}
+th{padding:10px 12px;text-align:left;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+th:first-child{width:42px;text-align:center}
+td{padding:9px 12px;border-bottom:1px solid var(--border);vertical-align:middle;text-align:left;font-family:Arial,sans-serif}
+tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even) td{background:#FAFBFD}
+tbody tr:hover td{background:#EBF0FF}
+td:first-child{text-align:center;font-size:11px;color:var(--text3);width:42px}
+.rad{font-family:Arial,sans-serif;font-size:12px;color:var(--text2)}
+.resp{font-size:13px;color:var(--text)}
+.asunto{font-size:13px;color:var(--text2)}
+.footer{text-align:center;padding:2.5rem 1rem;font-size:11px;color:var(--text3);border-top:1px solid var(--border);margin-top:3rem}
+@media(max-width:600px){.topbar{padding:0 1rem}.hero{padding:2rem 1rem}.content{padding:1.5rem 1rem}}
+@media(max-width:600px){.hero img[alt="Logo Acueducto de Bogotá"]{height:24px !important;top:.6rem !important;right:.75rem !important}.hero>div[style*="width:64px"]{margin-top:1.5rem !important}.hero-kpis{flex-wrap:wrap}.kpi{min-width:70px;flex:1 1 70px}}
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <span class="topbar-title">GCSM · Radicados Pendientes</span>
+  <div class="topbar-sep"></div>
+  <div class="topbar-links">
+    <a class="topbar-link" href="#" onclick="showDenied('Corredores Ambientales');return false;"><span class="dot" style="background:#6EE7B7"></span>Corredores Ambientales</a>
+    <a class="topbar-link" href="#" onclick="showDenied('Dirección Abastecimiento');return false;"><span class="dot" style="background:#6EE7B7"></span>Dirección Abastecimiento</a>
+    <a class="topbar-link" href="#" onclick="showDenied('Dirección Red Matriz');return false;"><span class="dot" style="background:#FCD34D"></span>Dirección Red Matriz</a>
+    <a class="topbar-link" href="#" onclick="showDenied('Dirección Red Troncal');return false;"><span class="dot" style="background:#FDBA74"></span>Dirección Red Troncal</a>
+    <a class="topbar-link active" href="dbr.html"><span class="dot" style="background:#F9A8D4"></span>Dirección Bienes Raíces</a>
+  </div>
+</nav>
+<div class="hero" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-mid) 60%,#3B66D4 100%);position:relative;">
+  <img src="https://raw.githubusercontent.com/marianadamarin12-crypto/RADICADOS_GCSM/main/Logo.jpg" alt="Logo Acueducto de Bogotá" style="position:absolute;top:1rem;right:1.5rem;height:38px;filter:brightness(0) invert(1);opacity:0.9;">
+  <div style="width:64px;height:64px;border-radius:12px;background:#FCE7F3;display:flex;align-items:center;justify-content:center;margin:0 auto .75rem;font-size:13px;font-weight:700;color:#9D174D;letter-spacing:.04em">DBR</div>
+  <div class="hero-eyebrow">Comunicaciones en Trámite</div>
+  <h1>Dirección Bienes Raíces</h1>
+  <p class="hero-sub">Correspondencia interna y externa · DBR</p>
+  <div class="hero-kpis">
+    <div class="kpi" onclick="document.querySelector('.vig-label').scrollIntoView({behavior:'smooth',block:'start'})" style="cursor:pointer;transition:background .2s;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+      <div class="kpi-val">13</div><div class="kpi-lbl">Total pend.</div>
+      <div style="font-size:9px;color:rgba(255,255,255,0.45);margin-top:4px;letter-spacing:.05em">VER TODO ↓</div>
+    </div>
+    <div class="kpi" onclick="document.getElementById('sec-2024').scrollIntoView({behavior:'smooth',block:'start'})" style="cursor:pointer;transition:background .2s;border:1.5px solid rgba(255,100,100,0.5);border-radius:8px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+      <div style="font-size:11px;margin-bottom:2px;">🔴</div>
+      <div class="kpi-val" style="color:#FCA5A5;">1</div>
+      <div class="kpi-lbl">2024</div>
+      <div style="font-size:9px;color:#FCA5A5;margin-top:4px;letter-spacing:.05em;font-weight:600;">⚠ ALERTA</div>
+    </div>
+    <div class="kpi" onclick="document.getElementById('sec-2025').scrollIntoView({behavior:'smooth',block:'start'})" style="cursor:pointer;transition:background .2s;border:1.5px solid rgba(255,100,100,0.5);border-radius:8px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+      <div style="font-size:11px;margin-bottom:2px;">🔴</div>
+      <div class="kpi-val" style="color:#FCA5A5;">3</div>
+      <div class="kpi-lbl">2025</div>
+      <div style="font-size:9px;color:#FCA5A5;margin-top:4px;letter-spacing:.05em;font-weight:600;">⚠ ALERTA</div>
+    </div>
+    <div class="kpi" onclick="document.getElementById('sec-2026').scrollIntoView({behavior:'smooth',block:'start'})" style="cursor:pointer;transition:background .2s;border:1.5px solid rgba(255,100,100,0.5);border-radius:8px;" onmouseover="this.style.background='rgba(255,255,255,0.15)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">
+      <div style="font-size:11px;margin-bottom:2px;">🔴</div>
+      <div class="kpi-val" style="color:#FCA5A5;">9</div>
+      <div class="kpi-lbl">2026</div>
+      <div style="font-size:9px;color:#FCA5A5;margin-top:4px;letter-spacing:.05em;font-weight:600;">⚠ ALERTA</div>
+    </div>
+  </div>
+  <div style="display:flex;gap:.5rem;justify-content:center;margin-top:1.2rem;flex-wrap:wrap;">
+    <a href="javascript:window.close()" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.7);text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:5px 14px;border-radius:20px;">✕ Cerrar</a>
+    <a href="javascript:window.print()" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.7);text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:5px 14px;border-radius:20px;background:rgba(255,255,255,0.12);">🖨 Imprimir</a>
+    <a href="javascript:exportToExcel()" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,.7);text-decoration:none;border:1px solid rgba(52,211,153,0.5);padding:5px 14px;border-radius:20px;background:rgba(52,211,153,0.25);">📊 Exportar Excel</a>
+  </div>
+</div>
+<div class="content">
+
+  <div id="sec-2024" class="vig-label" style="background:#FEE2E2;color:#991B1B">🔴 2024 — 1 pendiente &nbsp;·&nbsp; ALERTA — AÑO VENCIDO</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Entrada / Radicado</th><th>Área responsable</th><th>Asunto</th></tr></thead>
+    <tbody>
+      <tr>
+    <td>01</td>
+    <td class="rad">1471001- 2024-0362</td>
+    <td class="resp">Todas las Direcciones</td>
+    <td class="asunto">Reiteración memorandos sobre concepto técnico de los activos fijos para proceso de depuración</td>
+  </tr>
+    </tbody>
+  </table></div>
+
+  <div id="sec-2025" class="vig-label" style="background:#FEE2E2;color:#991B1B">🔴 2025 — 3 pendientes &nbsp;·&nbsp; ALERTA — AÑO VENCIDO</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Entrada / Radicado</th><th>Área responsable</th><th>Asunto</th></tr></thead>
+    <tbody>
+      <tr>
+    <td>01</td>
+    <td class="rad">13700-2025-0247</td>
+    <td class="resp">Direcciones · Gerencia</td>
+    <td class="asunto">Seguimiento ICxP Liberadas con corte junio 2025</td>
+  </tr>
+      <tr>
+    <td>02</td>
+    <td class="rad">1330001-2025-0627</td>
+    <td class="resp">Direcciones · Gerencia</td>
+    <td class="asunto">ENTREGA DE INFORMACIÓN ESTIMADOS AÑO 2025</td>
+  </tr>
+      <tr>
+    <td>03</td>
+    <td class="rad">1451001-2025-1690</td>
+    <td class="resp">Direcciones · Gerencia</td>
+    <td class="asunto">SOLICITUD INVENTARIOS DOCUMENTALES ARCHIVOS DE GESTIÓN</td>
+  </tr>
+    </tbody>
+  </table></div>
+
+  <div id="sec-2026" class="vig-label" style="background:#FEE2E2;color:#991B1B">🔴 2026 — 9 pendientes &nbsp;·&nbsp; ALERTA</div>
+  <div class="table-wrap"><table>
+    <thead><tr><th>#</th><th>Entrada / Radicado</th><th>Área responsable</th><th>Asunto</th></tr></thead>
+    <tbody>
+      <tr>
+    <td>01</td>
+    <td class="rad">1360001-2026-307</td>
+    <td class="resp">DBR</td>
+    <td class="asunto">RESPUESTA MEMORANDO INTERNO 252001-2026-00463 – SOLICITUD GENERACIÓN DE RECIBO PARA EL PAGO DE LA SANCIÓN CORRECCIÓN REDUCIDA.</td>
+  </tr>
+      <tr>
+    <td>02</td>
+    <td class="rad">1360001-2026-400</td>
+    <td class="resp">DBR</td>
+    <td class="asunto">RESPUESTA MI 252001-2026-00580 A LA SOLICITUD RECIBO DE CAJA IMPUESTO DE TIMBRE Y RECIBOS DE PAGO POR SANCIÓN E INTERESES.</td>
+  </tr>
+      <tr>
+    <td>03</td>
+    <td class="rad">1190001-2026-0731</td>
+    <td class="resp">DBR</td>
+    <td class="asunto">ACTA DE LIQUIDACIÓN CONTRATO DE PRESTACIÓN DE SERVICIOS PERSONA NATURAL NO. 2-05-25200- 0694-2023 AVISO SAP NO. 700067945 Y NO. ORDEN 8400082244</td>
+  </tr>
+      <tr>
+    <td>04</td>
+    <td class="rad">E-2026-057229</td>
+    <td class="resp">DBR</td>
+    <td class="asunto">2026EE8529 2026ER6918 RESPUESTA AL RADICADO IDIGER NO. 2026ER6918</td>
+  </tr>
+      <tr>
+    <td>05</td>
+    <td class="rad">1360001-2026-400</td>
+    <td class="resp">DBR</td>
+    <td class="asunto">Respuesta MI 252001-2026-00580 a la solicitud recibo de caja impuesto de timbre y recibos de pago por sanción e intereses.</td>
+  </tr>
+      <tr>
+    <td>06</td>
+    <td class="rad">1360001-2026-402</td>
+    <td class="resp">DBR</td>
+    <td class="asunto">NUEVAS BASES DE RETENCIÓN COMPRAN DE BIENES Y SERVICIOS</td>
+  </tr>
+      <tr>
+    <td>07</td>
+    <td class="rad">1360001-2026-278</td>
+    <td class="resp">Direcciones</td>
+    <td class="asunto">CARTERA IMPUESTO DE TIMBRE AÑO 2026</td>
+  </tr>
+      <tr>
+    <td>08</td>
+    <td class="rad">1250001-2026-0135</td>
+    <td class="resp">Direcciones · Gerencia</td>
+    <td class="asunto">SOCIALIZACIÓN DE INFORMES DE PLANES DE MEJORAMIENTO DEL SISTEMA ÚNICO DE GESTIÓN (SUG), GESTIÓN DE RIESGOS Y PLANIFICACIÓN DE CAMBIOS – PRIMER CUATRIMESTRE DE 2026</td>
+  </tr>
+      <tr>
+    <td>09</td>
+    <td class="rad">1360001-2026-439</td>
+    <td class="resp">DRTA · DBR</td>
+    <td class="asunto">CARTERA IMPUESTO DE TIMBRE AÑO 2026</td>
+  </tr>
+    </tbody>
+  </table></div>
+</div>
+<div class="footer">
+  Gerencia Corporativa Sistema Maestro · Corte: 25 de junio de 2026<br>
+  Mariana Dávila Marín — Contratista GCSM<br>
+  <span style="font-size:10px;color:#C0C8D8;margin-top:4px;display:inline-block;">
+    Fecha de consulta: <span id="fecha-consulta"></span>
+  </span>
+</div>
+<script>
+  const d=new Date();
+  const op={weekday:'long',year:'numeric',month:'long',day:'numeric',hour:'2-digit',minute:'2-digit'};
+  document.getElementById('fecha-consulta').textContent=d.toLocaleDateString('es-CO',op);
+</script>
+<div id="denied-overlay" style="display:none;position:fixed;inset:0;background:rgba(10,15,40,0.82);z-index:9999;align-items:center;justify-content:center;">
+  <div style="background:#fff;border-radius:16px;padding:2.5rem 2rem;max-width:380px;width:90%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,0.35);">
+    <div style="width:64px;height:64px;border-radius:50%;background:#FEE2E2;display:flex;align-items:center;justify-content:center;margin:0 auto 1.25rem;font-size:28px;">🔒</div>
+    <h2 style="font-size:1.2rem;font-weight:600;color:#111827;margin-bottom:.5rem;">Acceso restringido</h2>
+    <p id="denied-msg" style="font-size:0.875rem;color:#6B7280;margin-bottom:1.5rem;line-height:1.6;"></p>
+    <button onclick="document.getElementById('denied-overlay').style.display='none'"
+      style="background:#1A2E6C;color:#fff;border:none;border-radius:8px;padding:10px 28px;font-size:14px;font-weight:500;cursor:pointer;width:100%;">
+      Entendido
+    </button>
+  </div>
+</div>
+<button id="btn-subir" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  style="display:none;position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:#1A2E6C;color:#fff;border:none;border-radius:50%;width:44px;height:44px;font-size:20px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,0.25);">↑</button>
+<script>
+function showDenied(s){
+  document.getElementById('denied-msg').textContent='No tienes permiso para acceder a "'+s+'". Contacta al administrador.';
+  document.getElementById('denied-overlay').style.display='flex';
+}
+document.getElementById('denied-overlay').addEventListener('click',function(e){if(e.target===this)this.style.display='none';});
+window.addEventListener('scroll',function(){
+  const b=document.getElementById('btn-subir');
+  if(window.scrollY>300){b.style.display='flex';b.style.alignItems='center';b.style.justifyContent='center';}
+  else b.style.display='none';
+});
+</script>
+<script>
+function exportToExcel(){
+  try{
+    var tables=document.querySelectorAll('table');
+    var labels=document.querySelectorAll('.vig-label');
+    var areaTitle='Dirección Bienes Raíces';
+    var fecha=new Date().toLocaleDateString("es-CO",{year:"numeric",month:"long",day:"numeric"});
+    var st='font-family:Arial;font-size:10pt;color:#000000;border:1px solid #000000;padding:4px 6px;';
+    var html='<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel"><head><meta charset="UTF-8"></head><body>';
+    html+='<table><tr><td colspan="5" style="font-family:Arial;font-size:12pt;font-weight:bold;color:#000000;padding:4px;">'+areaTitle+' - Radicados Pendientes</td></tr>';
+    html+='<tr><td colspan="5" style="font-family:Arial;font-size:10pt;color:#000000;padding:2px 4px;">Corte: 25 de junio de 2026 - Generado: '+fecha+'</td></tr>';
+    html+='<tr><td colspan="5" style="padding:3px;"></td></tr></table>';
+    html+='<table style="border-collapse:collapse;width:100%;">';
+    html+='<tr><th style="'+st+'font-weight:bold;text-align:center;">#</th>';
+    html+='<th style="'+st+'font-weight:bold;">ENTRADA / RADICADO</th>';
+    html+='<th style="'+st+'font-weight:bold;">AREA RESPONSABLE</th>';
+    html+='<th style="'+st+'font-weight:bold;">ASUNTO</th>';
+    html+='<th style="'+st+'font-weight:bold;text-align:center;">VIGENCIA</th></tr>';
+    var counter=1;
+    tables.forEach(function(table,i){
+      var label=labels[i]?labels[i].textContent.trim():'';
+      var yr='2026';
+      if(label.indexOf('2024')!==-1) yr='2024';
+      else if(label.indexOf('2025')!==-1) yr='2025';
+      var rows=table.querySelectorAll('tbody tr');
+      rows.forEach(function(row){
+        var cells=row.querySelectorAll('td');
+        if(cells.length<3) return;
+        var rad=cells[1]?cells[1].textContent.trim():'';
+        if(!rad) return;
+        var resp=cells[2]?cells[2].textContent.trim():'';
+        var asunto=cells[3]?cells[3].textContent.trim():'';
+        html+='<tr>';
+        html+='<td style="'+st+'text-align:center;">'+counter+'</td>';
+        html+='<td style="'+st+'">'+rad+'</td>';
+        html+='<td style="'+st+'">'+resp+'</td>';
+        html+='<td style="'+st+'">'+asunto+'</td>';
+        html+='<td style="'+st+'text-align:center;">'+yr+'</td>';
+        html+='</tr>';
+        counter++;
+      });
+    });
+    html+='</table>';
+    html+='<br><table><tr><td style="font-family:Arial;font-size:9pt;color:#000000;">Gerencia Corporativa Sistema Maestro</td></tr></table>';
+    html+='</body></html>';
+    var blob=new Blob([html],{type:'application/vnd.ms-excel;charset=utf-8;'});
+    var url=window.URL.createObjectURL(blob);
+    var a=document.createElement('a');a.style.display='none';a.href=url;a.download='DireccionBienesRaices_Pendientes.xls';
+    document.body.appendChild(a);a.click();
+    setTimeout(function(){document.body.removeChild(a);window.URL.revokeObjectURL(url);},200);
+  }catch(e){alert('Error: '+e.message);}
+}
+</script>
+</body>
+</html>
